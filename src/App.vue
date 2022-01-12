@@ -1,15 +1,24 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <input type="file" @change="readFhx" />
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import { ReadFhx } from '../api/readFhx.js'
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  methods: {
+    readFhx(e) {
+      if (e.target.files) {
+        new ReadFhx(e.target.files);
+      }
+      
+    }
   }
 }
 </script>
