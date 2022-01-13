@@ -1,24 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <input type="file" @change="readFhx" />
+  <home-page />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import { ReadFhx } from '../api/readFhx.js'
+import HomePage from './pages/HomePage';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HomePage
   },
   methods: {
-    readFhx(e) {
-      if (e.target.files) {
-        new ReadFhx(e.target.files);
-      }
-      
-    }
+    
   }
 }
 </script>
@@ -26,13 +18,24 @@ export default {
 <style>
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+:root {
+  --gray: #aaa;
+  --light-gray: #ccc;
+  --dark-gray: #777;
+  --black: #333;
+  --white: #fff;
+  --red: rgb(214, 50, 9);
+  --blue: rgb(31, 71, 202);
+  --green: rgb(65, 189, 96);
 }
+.bg-light {
+  background: var(--white);
+  color: var(--black);
+}
+.bg-dark {
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+
 </style>
