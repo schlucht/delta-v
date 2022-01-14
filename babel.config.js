@@ -5,6 +5,8 @@ module.exports = {
        {
          corejs: "core-js@3"
        },
+       "@vue/cli-plugin-babel/preset"
      ],
   ],
+  
 };

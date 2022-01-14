@@ -1,17 +1,26 @@
 <template>
   <home-page />
+  <p>{{myData()}}</p>
 </template>
 
 <script>
 import HomePage from './pages/HomePage';
+import { getData } from '@/services/fhxService'
 export default {
   name: 'App',
   components: {
     HomePage
   },
-  methods: {
+  computed: {
     
-  }
+      
+  },
+  methods: {
+     myData() {
+      return getData().then(resp => resp)
+    }
+  },
+  
 }
 </script>
 
